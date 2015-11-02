@@ -1,0 +1,16 @@
+#/bin/bash
+
+if [ "$1" == "--help" ]; then
+  echo "You need help using helpme? You must really need help!"
+  exit 0
+fi
+
+echo "You've probably forgotten all of your helpful script names! You moron!"
+echo ""
+for c in `ls -1 ~/bin/`; do
+  if [ "$c" != "subl" ]; then
+    echo "$c"
+    $c --help 2>&1 | sed 's/^/    /'
+    echo ""
+  fi
+done

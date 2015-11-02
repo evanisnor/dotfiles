@@ -1,0 +1,8 @@
+#/bin/bash
+
+if [ "$1" == "--help" ]; then
+  echo "Push the current branch to master while setting upstream to origin."
+  exit 0
+fi
+
+git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`

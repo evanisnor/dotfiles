@@ -1,0 +1,7 @@
+if [ "$1" == "--help" ]; then
+  echo "Remove all branches whose name starts with the supplied argument."
+  echo "Usage: $0 evanisnor"
+  exit 0
+fi
+
+for b in `git branch --list`; do if [[ $b == $1* ]]; then git branch -D $b; fi; done;

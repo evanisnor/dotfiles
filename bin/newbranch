@@ -1,0 +1,9 @@
+#/bin/bash
+
+if [ "$1" == "--help" ]; then
+  echo "Checks out master, pulls, and makes a new branch with the argument name and an 'evanisnor/' prefix."
+  echo "Usage: $0 fix-for-a-thing"
+  exit 0
+fi
+
+git checkout master && git pull && git checkout -b evanisnor/$1

@@ -1,0 +1,8 @@
+#/bin/bash
+
+if [ "$1" == "--help" ]; then
+  echo "Checks out master and pulls from upstream."
+  exit 0
+fi
+
+git checkout master && git pull
